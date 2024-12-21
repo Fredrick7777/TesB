@@ -1,0 +1,260 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  color: grey;
+}
+
+/* Desktop Navigation */
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease, text-underline-offset 0.3s ease;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: black;
+  transition-delay: 0.3s;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+/* Hamburger Menu */
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+/* Profile Section */
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+  padding: 0 10%;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+/* RESPONSIVE PIC */
+.section__pic-container img {
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  top: 20px; /* Moves the image down by 20px */
+
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Content Section */
+.content-section {
+  background-color: #f8f8f8;
+  padding: 4rem 10%;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.experience-item, 
+.education-item {
+  padding: 1.5rem 0;
+  background-color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+
+.date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.hobbies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hobby-tag {
+  background-color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  border: 1px solid #eee;
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+      display: none;
+  }
+
+  #hamburger-nav {
+      display: flex;
+  }
+
+  #profile,
+  .section-container {
+      display: block;
+  }
+
+  .section__pic-container {
+      width: auto;
+      height: 46vw;
+      justify-content: center;
+      margin-bottom: 2rem;
+  }
+
+  .title {
+      font-size: 2rem;
+  }
+  
+  .content-section {
+      padding: 2rem 5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section__pic-container {
+      height: 300px;
+      width: 300px;
+      margin: 0 auto 2rem;
+  }
+
+  #profile {
+      padding: 0 5%;
+  }
+}
